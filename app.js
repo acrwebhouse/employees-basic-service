@@ -7,10 +7,10 @@ const mongoDBPort = config.mongoDBPort;
 const mongoDBName = config.mongoDBName;
 const server = require('http').createServer(app);
 const serverUse=require('./lib/serverUse');
-const companyRestApi = require("./lib/rest_api/company");
+const employeesRestApi = require("./lib/rest_api/employees");
 console.log(config)
 dataBaseInit.mongoDBInit(mongoDBPort,mongoDBName);
 serverUse.on(app);
-companyRestApi.on(app);
+employeesRestApi.on(app);
 server.listen(process.env.PORT||serverPort);
 console.log("現在使用" + serverPort + "port");
